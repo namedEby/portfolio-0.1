@@ -1,0 +1,256 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 60vh;
+  /* position: relative; */
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+}
+
+.hero-content {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  z-index: 3;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  color: #23272f; /* Use main text color for a professional look */
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.hero-separator {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 0;
+  border-top: 2px solid #2563eb; /* Use the professional blue accent */
+  z-index: 2; /* above image */
+  pointer-events: none;
+}
+
+.hero-separator-left,
+.hero-separator-right {
+  flex: 1 1 0;
+  height: 0;
+  border-top: 2px solid #2563eb; /* Use the professional blue accent */
+  margin: 0 16px;
+  min-width: 40px;
+  max-width: 100vh;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-image-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.hero-image-placeholder {
+  width: 160px;
+  height: 160px;
+  background: #ddd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #888;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 2px 16px #22d3ee22;
+}
+
+.hero-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #888;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 2px 16px #2563eb22;
+  border: 4px solid #f7f8fa;
+  background: #dbeafe;
+}
+
+.hero-description {
+  margin: 1.5rem 0 2rem 0;
+  color: #4C3A2F;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-links {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.hero-link {
+  color: var(--accent);
+  background: var(--khaki-2);
+  border-radius: 20px;
+  padding: 0.5rem 1.2rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(76,58,47,0.07);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.hero-link:hover {
+  background: var(--accent);
+  color: var(--khaki-2);
+  transform: translateY(-2px) scale(1.05);
+}
+
+/*
+  Animated geometric background for Hero section using palette colors
+  Make the shapes larger and the main one a triangle
+*/
+.hero-bg-geometry {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  /* Slightly stronger gradient for more depth */
+  background: radial-gradient(ellipse at 60% 30%, rgba(76,58,47,0.22) 0%, rgba(152,152,137,0.18) 60%, transparent 100%);
+}
+
+.hero-geo-svg {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.geo1 {
+  fill: var(--van-dyke);
+  opacity: 0.22;
+  animation: geo-move1 12s ease-in-out infinite alternate;
+}
+.geo2 {
+  fill: var(--khaki);
+  opacity: 0.28;
+  animation: geo-move2 16s ease-in-out infinite alternate;
+}
+.geo3 {
+  fill: var(--bistre);
+  opacity: 0.22;
+  animation: geo-move3 14s ease-in-out infinite alternate;
+}
+.geo4 {
+  fill: var(--khaki-2);
+  opacity: 0.32;
+  animation: geo-move4 18s ease-in-out infinite alternate;
+}
+.geo5 {
+  fill: var(--battleship-gray);
+  opacity: 0.25;
+  animation: geo-move5 20s ease-in-out infinite alternate;
+}
+
+/*
+  Add more geo classes for additional triangles
+*/
+.geo6 {
+  fill: var(--khaki);
+  opacity: 0.18;
+  animation: geo-move2 18s ease-in-out infinite alternate-reverse;
+}
+.geo7 {
+  fill: var(--battleship-gray);
+  opacity: 0.22;
+  animation: geo-move3 20s ease-in-out infinite alternate-reverse;
+}
+.geo8 {
+  fill: var(--van-dyke);
+  opacity: 0.15;
+  animation: geo-move4 22s ease-in-out infinite alternate-reverse;
+}
+.geo9 {
+  fill: var(--khaki-2);
+  opacity: 0.20;
+  animation: geo-move5 24s ease-in-out infinite alternate-reverse;
+}
+.geo10 {
+  fill: var(--bistre);
+  opacity: 0.19;
+  animation: geo-move1 26s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes geo-move1 {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(80px) scale(1.18); }
+}
+@keyframes geo-move2 {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-60px) scale(1.22); }
+}
+@keyframes geo-move3 {
+  0% { transform: translateX(0) scale(1); }
+  100% { transform: translateX(120px) scale(1.05); }
+}
+@keyframes geo-move4 {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-100px) scale(1.25); }
+}
+@keyframes geo-move5 {
+  0% { transform: translateX(0) scale(1); }
+  100% { transform: translateX(-80px) scale(1.2); }
+}
+
+@media (max-width: 800px) {
+  .hero-separator-left,
+  .hero-separator-right {
+    top: calc(100% - 80px);
+    width: calc(50% - 60px);
+  }
+  .hero-image-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+}

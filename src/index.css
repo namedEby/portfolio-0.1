@@ -1,10 +1,71 @@
+/* Professional, clean, mid-tone theme for portfolio */
+:root {
+  --battleship-gray: #989889;
+  --khaki: #C2B298;
+  --van-dyke: #4C3A2F;
+  --khaki-2: #A7A391;
+  --bistre: #412D27;
+
+  --primary-bg: var(--khaki-2);
+  --secondary-bg: var(--khaki);
+  --accent: var(--van-dyke);
+  --text-main: var(--van-dyke);
+  --text-secondary: var(--battleship-gray);
+  --card-bg: var(--khaki);
+  --border-radius: 18px;
+  --shadow: 0 4px 24px rgba(76, 58, 47, 0.10);
+}
+
 body {
+  background: var(--primary-bg);
+  color: var(--text-main);
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  background: var(--primary-bg);
+}
+
+section {
+  margin: 0 auto 48px auto;
+  max-width: 900px;
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 48px 32px;
+}
+
+h1, h2, h3 {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+p, .tagline {
+  color: var(--text-secondary);
+}
+
+.hero-image-placeholder, .hero-image {
+  background: var(--battleship-gray);
+  color: var(--khaki);
+  font-weight: 600;
+  border: 4px solid var(--card-bg);
+  box-shadow: 0 2px 16px rgba(152,152,137,0.10);
+}
+
+.hero-separator-left, .hero-separator-right {
+  border-top: 2px solid var(--van-dyke);
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 32px 8px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
 }
 
 code {

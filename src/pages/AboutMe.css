@@ -1,0 +1,83 @@
+/* Remove composes and @import, use only local styles. 
+   Use shared class names in React components instead. */
+
+.about-me {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  padding: 4rem 1rem 2rem 1rem;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.about-me-content {
+  background: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin-top: 0 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.about-me h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #23272f;
+  font-weight: 700;
+}
+
+.about-me p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+  color: #4b5563;
+}
+
+.tech-icons {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.tech-icon {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 2px 8px rgba(76,58,47,0.10));
+  transition: transform 0.2s;
+}
+
+.tech-icon:hover {
+  transform: scale(1.12) rotate(-6deg);
+}
+
+/* Parallax effect for About Me section */
+.about-me-parallax {
+  background: none !important;
+  position: static !important;
+  overflow: visible !important;
+}
+
+.about-me-parallax .about-me-content {
+  position: static !important;
+  z-index: auto !important;
+}
+
+.about-me-parallax::before {
+  display: none !important;
+}
+
+.hero-separator-left,
+.hero-separator-right {
+  border-top: 2px solid #23272f; /* Use the new blue accent for the separator */
+}
