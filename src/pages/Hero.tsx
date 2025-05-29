@@ -5,47 +5,16 @@ import dp from '../assets/dp.jpg';
 import { motion } from 'framer-motion';
 import HeroNav from '../components/HeroNav';
 import HeroGeometry, { Triangle } from '../components/HeroGeometry';
+import { HERO } from '../components/constants';
 
 const Hero: React.FC = () => {
-  const navButtons = [
-    {
-      label: 'About Me',
-      href: '#about',
-      onClick: () => {
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) aboutSection.scrollIntoView({ behavior: 'smooth' });
-      },
-    },
-    {
-      label: 'Projects',
-      href: '#projects',
-      onClick: () => {
-        const projectsSection = document.getElementById('projects');
-        if (projectsSection) projectsSection.scrollIntoView({ behavior: 'smooth' });
-      },
-    },
-    {
-      label: 'Experience',
-      href: '#experience',
-      onClick: () => {
-        const expSection = document.getElementById('experience');
-        if (expSection) expSection.scrollIntoView({ behavior: 'smooth' });
-      },
-    },
-    {
-      label: 'Contact',
-      href: '#contact',
-      onClick: () => {
-        const contactSection = document.getElementById('contact');
-        if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-      },
-    },
-    {
-      label: 'GitHub',
-      href: 'https://github.com/eby-stephen',
-      external: true,
-    },
-  ];
+  const navButtons = HERO.nav.map(btn => ({
+    ...btn,
+    onClick: btn.href && !btn.external ? () => {
+      const section = document.getElementById(btn.href.replace('#', ''));
+      if (section) section.scrollIntoView({ behavior: 'smooth' });
+    } : undefined
+  }));
 
   const triangles: Triangle[] = [
     { points: '400,100 1200,200 700,700', className: 'geo geo1' },
@@ -69,11 +38,10 @@ const Hero: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <h1>Eby Stephen</h1>
-        <p className="tagline">Fullstack Frontend Developer</p>
+        <h1>{HERO.name}</h1>
+        <p className="tagline">{HERO.tagline}</p>
         <p className="hero-description">
-          I build beautiful, performant web and mobile apps with modern JavaScript frameworks.<br />
-          Experienced in React, React Native, and TypeScript. Always learning, always building.
+          {HERO.description.split('\n').map((line, i) => <span key={i}>{line}<br /></span>)}
         </p>
         <HeroNav buttons={navButtons} />
       </motion.div>

@@ -1,10 +1,11 @@
 import React from 'react';
 import './Footer.css';
+import { FOOTER } from '../components/constants';
 
 const Footer: React.FC = () => (
   <footer className="footer">
     <div className="footer-content">
-      <span>© {new Date().getFullYear()} Eby Stephen. All rights reserved.</span>
+      <span>{FOOTER.copyright}</span>
     </div>
   </footer>
 );
